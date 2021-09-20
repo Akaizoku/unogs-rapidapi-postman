@@ -1,0 +1,584 @@
+{
+	"info": {
+		"_postman_id": "93adb578-9c3c-43d9-a647-9a96d574d8dc",
+		"name": "uNoGS RapidAPI",
+		"description": "Next generation Netflix Global Search using the [unofficial Netflix Global Search](https://unogs.com/) API through [RapidAPI](https://rapidapi.com/unogs/api/unogsng/).\n\n## Variables\n\nIn order to use this collection, two environment variables are required.\n\n| Name | Description | Example value |\n| ---- | ----------- | ------------- |\n| `X-RapidAPI-Host` | uNoGS API URL on RapidAPI | `unogsng.p.rapidapi.com` |\n| `X-RapidAPI-Key`  | A valid RapidAPI application key | `78yfj34867tr93827ytj78y2348t7y3987y24tj937824yt941` |",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Static",
+			"item": [
+				{
+					"name": "Genres",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/countries",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Countries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/countries",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Static endpoints with no parameters."
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Deleted",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/titlesdel?offset=0&countrylist=78&date=2019-12-01",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"titlesdel"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "",
+									"description": "Limit of returned items (default/max 100)",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "Starting number of results (default is 0)"
+								},
+								{
+									"key": "countrylist",
+									"value": "78",
+									"description": "List of uNoGS country IDs separated by a comma"
+								},
+								{
+									"key": "date",
+									"value": "2019-12-01",
+									"description": "Returns anything deleted after this date (YYYY-MM-DD)"
+								},
+								{
+									"key": "netflixid",
+									"value": null,
+									"description": "Netflix Title ID",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/search?start_year=1972&orderby=rating&audiosubtitle_andor=and&limit=100&subtitle=english&countrylist=78,46&audio=english&country_andorunique=unique&offset=0&end_year=2019",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "newdate",
+									"value": "2021-09-20",
+									"description": "Returns all titles with a new date greater than this",
+									"disabled": true
+								},
+								{
+									"key": "genrelist",
+									"value": null,
+									"description": "List of Netflix genre id's (see genre endpoint for list)",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": null,
+									"description": "Movie or series",
+									"disabled": true
+								},
+								{
+									"key": "start_year",
+									"value": "1972",
+									"description": "A 4 digit year"
+								},
+								{
+									"key": "orderby",
+									"value": "rating",
+									"description": "Order by string (date, dateDesc, rating, title, type, runtime, filmyear, filmyearDesc)"
+								},
+								{
+									"key": "audiosubtitle_andor",
+									"value": "and",
+									"description": "And/or for audio and subtitles"
+								},
+								{
+									"key": "start_rating",
+									"value": null,
+									"description": "IMDB rating bottom threshold (0-10)",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"description": "Limit of returned items (default/max 100)"
+								},
+								{
+									"key": "end_rating",
+									"value": null,
+									"description": "IMDB rating top threshold (0-10)",
+									"disabled": true
+								},
+								{
+									"key": "subtitle",
+									"value": "english",
+									"description": "A valid language type"
+								},
+								{
+									"key": "countrylist",
+									"value": "78,46",
+									"description": "List of uNoGS country IDs separated by a comma"
+								},
+								{
+									"key": "query",
+									"value": null,
+									"description": "Any string you want to search (fulltext against the title)",
+									"disabled": true
+								},
+								{
+									"key": "audio",
+									"value": "english",
+									"description": "A valid language type"
+								},
+								{
+									"key": "country_andorunique",
+									"value": "unique",
+									"description": "And/or for country list"
+								},
+								{
+									"key": "offset",
+									"value": "0",
+									"description": "Starting number of results (default is 0)"
+								},
+								{
+									"key": "end_year",
+									"value": "2019",
+									"description": "A 4 digit year"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "People",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/people?netflixid=70021641&name=Brad Pitt",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"people"
+							],
+							"query": [
+								{
+									"key": "netflixid",
+									"value": "70021641",
+									"description": "A Netflix title ID"
+								},
+								{
+									"key": "offset",
+									"value": null,
+									"description": "Starting number of results (default is 0)",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Brad Pitt",
+									"description": "A persons name (first, last, or both)"
+								},
+								{
+									"key": "limit",
+									"value": null,
+									"description": "Limit of returned items (default/max 100)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Search endpoints"
+		},
+		{
+			"name": "Details",
+			"item": [
+				{
+					"name": "Episodes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/episodes?netflixid=70153392&episodeid=70150654&seasonid=70051768",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"episodes"
+							],
+							"query": [
+								{
+									"key": "netflixid",
+									"value": "70153392",
+									"description": "Netflix title ID"
+								},
+								{
+									"key": "episodeid",
+									"value": "70150654",
+									"description": "Netflix episode ID"
+								},
+								{
+									"key": "seasonid",
+									"value": "70051768",
+									"description": "Netflix season ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Expiring",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/expiring?countrylist=78,46",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"expiring"
+							],
+							"query": [
+								{
+									"key": "countrylist",
+									"value": "78,46",
+									"description": "List of uNoGS country IDs separated by a comma"
+								},
+								{
+									"key": "offset",
+									"value": "",
+									"description": "Starting number of results (default is 0)",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Title Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/title?netflixid=81043135",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"title"
+							],
+							"query": [
+								{
+									"key": "netflixid",
+									"value": "81043135",
+									"description": "A Netflix specific ID"
+								},
+								{
+									"key": "imdbid",
+									"value": "",
+									"description": "An IMDB ID",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Title Genres",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/titlegenres?netflixid=81043135",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"titlegenres"
+							],
+							"query": [
+								{
+									"key": "netflixid",
+									"value": "81043135",
+									"description": "A Netflix specific ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Title Countries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/titlecountries?netflixid=81043135",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"titlecountries"
+							],
+							"query": [
+								{
+									"key": "netflixid",
+									"value": "81043135",
+									"description": "A Netflix specific ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Images",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-rapidapi-host",
+								"value": "{{X-RapidAPI-Host}}",
+								"description": "RapidAPI host",
+								"type": "text"
+							},
+							{
+								"key": "x-rapidapi-key",
+								"value": "{{X-RapidAPI-Key}}",
+								"description": "RapidAPI key",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{X-RapidAPI-Host}}/images?netflixid=81037848&offset=3&limit=2",
+							"protocol": "https",
+							"host": [
+								"{{X-RapidAPI-Host}}"
+							],
+							"path": [
+								"images"
+							],
+							"query": [
+								{
+									"key": "netflixid",
+									"value": "81037848",
+									"description": "Netflix Title ID"
+								},
+								{
+									"key": "offset",
+									"value": "3",
+									"description": "Starting number of results (default is 0)"
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"description": "Limit of returned items (default/max 100)"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Details endpoints."
+		}
+	]
+}
